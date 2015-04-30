@@ -46,7 +46,7 @@ public class ActioController {
 	        log.debug("Retrieved the following resource with ID {}: {}", "DILEEP", "SUCCESS");
             //ModelSupport.setVersion(responseModel, currentResourceVersion);
            // ModelSupport.setBody(responseModel, "SUCCESS");
-            return "SUCCESS";
+            return "TURNONREDLIGHT";
 	  }
 
 }
