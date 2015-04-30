@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.covisint.core.http.service.server.Version;
 import com.covisint.core.http.service.server.view.ModelSupport;
+import com.javasteam.amazon.echo.plugin.Builtin;
 
 /**
  * @author dmadathil
@@ -46,7 +47,10 @@ public class ActioController {
 	        log.debug("Retrieved the following resource with ID {}: {}", "DILEEP", "SUCCESS");
             //ModelSupport.setVersion(responseModel, currentResourceVersion);
            // ModelSupport.setBody(responseModel, "SUCCESS");
-            return "TURNONREDLIGHT";
+            
+	        
+	        String retval = Builtin.fetchQueuedItem( id );
+            return retval != null ? retval : "TURNONREDLIGHT";
 	  }
 
 }
