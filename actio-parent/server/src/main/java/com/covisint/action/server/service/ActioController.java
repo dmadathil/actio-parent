@@ -36,9 +36,9 @@ public class ActioController {
 		// TODO Auto-generated constructor stub
 	}
 	
-	  @RequestMapping(method = RequestMethod.GET, value = "/{id}")
+	  @RequestMapping(method = RequestMethod.GET, value = "/{id}" ,produces =  {"text/plain; charset=UTF-8"})
 	  @ResponseBody
-	    public String getById(@PathVariable String id) {
+	    public String getDevice(@PathVariable String id) {
 
 	        log.debug("Attempting to retrieve resource with ID {}", id);
 
