@@ -25,6 +25,14 @@
     <bean id="viewResolver" class="com.covisint.core.http.service.server.view.MediaTypeModelMessageConverterViewResolver"
         c:messageConverter-ref="messageConverter" /> -->
         
+     <bean id="viewResolver"
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+            value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+        
     <mvc:annotation-driven conversion-service="conversionService">
         <mvc:message-converters register-defaults="true">
              <bean class="org.springframework.http.converter.StringHttpMessageConverter">
@@ -33,6 +41,7 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+    
 
     <context:component-scan base-package="com.covisint" />
 

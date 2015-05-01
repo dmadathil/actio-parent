@@ -15,10 +15,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.covisint.core.http.service.server.Version;
 import com.covisint.core.http.service.server.view.ModelSupport;
-import com.javasteam.amazon.echo.plugin.Builtin;
+//import com.javasteam.amazon.echo.plugin.Builtin;
 
 /**
  * @author dmadathil
@@ -49,8 +50,17 @@ public class ActioController {
            // ModelSupport.setBody(responseModel, "SUCCESS");
             
 	        
-	        String retval = Builtin.fetchQueuedItem( id );
-            return retval != null ? retval : "TURNONREDLIGHT";
+	        //String retval = Builtin.fetchQueuedItem( id );
+            //return retval != null ? retval : "TURNONREDLIGHT";
+	        
+	        return "TURNONREDLIGHT";
 	  }
+	  
+	  
+	  @RequestMapping(method = RequestMethod.GET, value = "/home")
+	  public ModelAndView showHomePage() {
+		  log.info("INSIDE ModelANDvIEW");
+	      return new ModelAndView("index");   
+	     }
 
 }
