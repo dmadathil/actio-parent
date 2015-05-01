@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.covisint.core.http.service.server.Version;
 import com.covisint.core.http.service.server.view.ModelSupport;
-//import com.javasteam.amazon.echo.plugin.Builtin;
+import com.javasteam.amazon.echo.plugin.Builtin;
 
 /**
  * @author dmadathil
@@ -62,5 +62,21 @@ public class ActioController {
 		  log.info("INSIDE ModelANDvIEW");
 	      return new ModelAndView("index");   
 	     }
+	  
+	    @RequestMapping(method = RequestMethod.GET, value = "/new/{id}" ,produces =  {"text/plain; charset=UTF-8"})
+        @ResponseBody
+          public String getDeviceNew(@PathVariable String id) {
+
+              log.debug("Attempting to retrieve resource with ID {}", id);
+
+             // final Map<String, Object> responseModel = ModelSupport.createModel();
+              log.debug("Retrieved the following resource with ID {}: {}", "DILEEP", "SUCCESS");
+              //ModelSupport.setVersion(responseModel, currentResourceVersion);
+             // ModelSupport.setBody(responseModel, "SUCCESS");
+              
+              
+              String retval = Builtin.fetchQueuedItem( id );
+              return retval != null ? retval : "TURNONREDLIGHT";
+        }
 
 }
