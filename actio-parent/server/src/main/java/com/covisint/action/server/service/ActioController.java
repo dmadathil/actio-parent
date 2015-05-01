@@ -86,6 +86,7 @@ public class ActioController {
         @ResponseBody
         public String getDevice(@PathVariable String id, @PathVariable String command ) {
 	      id = id.toLowerCase();
+	      log.debug("Queueing for: " + id + " --> " + command);
 	      Builtin.queueItem( id, command );
 	      return "SUCCESS";
 	    }

@@ -29,8 +29,8 @@ public class Configuration implements Configurator {
     settings.put( "activityPollingStartTime", "now" );
     
     settings.put( "activityListener.1", "com.javasteam.amazon.echo.plugin.Twitter:sendTwit key=alexa simon says tweet" );
-    settings.put( "activityListener.2", "com.javasteam.amazon.echo.plugin.Builtin:doNothing queue=scout key=alexa simon says scout" );
-    settings.put( "activityListener.3", "com.javasteam.amazon.echo.plugin.Builtin:doNothing queue=power key=alexa simon says power" );
+    settings.put( "activityListener.2", "com.javasteam.amazon.echo.plugin.Builtin:doNothing queue=scout, key=alexa simon says scout" );
+    settings.put( "activityListener.3", "com.javasteam.amazon.echo.plugin.Builtin:doNothing queue=power, key=alexa simon says power" );
     //settings.put( "", "" );
     //settings.put( "", "" );
 
