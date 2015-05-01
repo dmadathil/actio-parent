@@ -81,5 +81,12 @@ public class ActioController {
               String retval = Builtin.fetchQueuedItem( id );
               return retval != null ? retval : "";
         }
-
+	    
+	    @RequestMapping(method = RequestMethod.GET, value = "/{id}/{command}" ,produces =  {"text/plain; charset=UTF-8"})
+        @ResponseBody
+        public String getDevice(@PathVariable String id, @PathVariable String command ) {
+	      id = id.toLowerCase();
+	      Builtin.queueItem( id, command );
+	      return "SUCCESS";
+	    }
 }
