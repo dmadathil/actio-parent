@@ -9,13 +9,13 @@ public class Configuration implements Configurator {
   private static HashMap<String,String> settings = new HashMap<String,String>();
   
   public Configuration() {
-    settings.put( "username",             "david.damon@covisint.com" );
-    settings.put( "password",             "greniia" );
+    settings.put( "username",             "userEmail" );
+    settings.put( "password",             "password" );
     settings.put( "loginForm",            "ap_signin_form" );
     settings.put( "userNameField",        "email" );
     settings.put( "userPasswordField",    "password" );
-    settings.put( "twit.user",            "tkismarr" );
-    settings.put( "twit.password",        "greniia" );
+    settings.put( "twit.user",            "user" );
+    settings.put( "twit.password",        "password" );
     
     settings.put( "pollingInterval",  "5" );
     settings.put( "pollingItemCount", "30" );
